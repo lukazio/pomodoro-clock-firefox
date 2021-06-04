@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="pomodoro.css"/>
+  </head>
+
+  <body>
+    <form id="options-form">
+      <fieldset>
+        <legend>Notification sound</legend>
+        <input class="option-input" id="customSound" name="customSound" type="checkbox"/>
+        <label class="option-label" for="customSound" title="Check this box if you want to use a custom sound. Only the first 5 seconds will be played. Due to local storage limitation, you will not be allowed to save options if the file is too big.">Use a custom notification sound <img src="../icons/question.png" width="15px"/></label><br/>
+        <input class="option-input" style="visibility: hidden;" id="soundFile" name="soundFile" type="file" accept="audio/*"/><br/>
+        <span id="customSoundFilename"></span><br/><br/>
+        <label class="option-label" for="volume">Notification volume: <span id="volume_value"></span>%</label>&nbsp;<a title="test" href="#" id="volume_test">&#128266;</a>
+        <input class="option-input" id="volume" name="volume" min="0" max="100" value="50" step="5" type="range"/><br/>
+      </fieldset>
+      <br/>
+	  <fieldset>
+        <legend>Custom color scheme</legend>
+        <input class="option-input" id="customColor" name="customColor" type="checkbox"/>
+		<label class="option-label" for="customColor" title="Check this box if you want to use custom colors, define colors below. Leave this box unchecked if you want default colors.">Use custom user-defined colors <img src="../icons/question.png" width="15px"/></label><br/>
+		<div id="customColorChoices">
+			<h2>User Interface</h2>
+			<label class="option-label" for="customColorBtn">Main color: </label>
+			<input class="option-input" id="customColorBtn" name="customColorBtn" type="color"/><br/>
+			<label class="option-label" for="customColorBtnHover">Button hover color: </label>
+			<input class="option-input" id="customColorBtnHover" name="customColorBtnHover" type="color"/><br/>
+			<label class="option-label" for="customColorBg">Background color: </label>
+			<input class="option-input" id="customColorBg" name="customColorBg" type="color"/><br/>
+			<h2>Clock Design</h2>
+			<label class="option-label" for="customColorFace">Clock face color: </label>
+			<input class="option-input" id="customColorFace" name="customColorFace" type="color"/><br/>
+			<label class="option-label" for="customColorSecond">Clock seconds hand color: </label>
+			<input class="option-input" id="customColorSecond" name="customColorSecond" type="color"/><br/>
+			<label class="option-label" for="customColorMinute">Clock minute hand color: </label>
+			<input class="option-input" id="customColorMinute" name="customColorMinute" type="color"/><br/>
+			<label class="option-label" for="customColorMark">Clock mark color: </label>
+			<input class="option-input" id="customColorMark" name="customColorMark" type="color"/>
+		</div>
+      </fieldset>
+      <br/>
+      <fieldset>
+        <legend>Other preferences</legend>
+        <input class="option-input" id="showMinutes" name="showMinutes" type="checkbox"/>
+        <label class="option-label" for="showMinutes">Show remaining minutes on extension icon</label><br/>
+      </fieldset>
+      <div id="messages">&nbsp;</div>
+      <button class="options" id="exportStatsJSON">Export usage data in JSON</button>
+      <button class="options" id="exportStatsCSV">Export usage data in CSV</button>
+      <button class="options" type="submit" id="save">Save</button>
+    </form>
+    <script src="options.js"></script>
+
+  </body>
+
+</html>
