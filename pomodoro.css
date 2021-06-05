@@ -112,9 +112,18 @@ button:hover {
   stroke-width: 1px; 
   stroke: var(--clock-mark-color);
 }
-#streakTimer,
-#pauseTimer,
-#volume {
+input[type=range]{
+	border: 0;
+	background: none;
 	padding-left: 0;
 	padding-right: 0;
+}
+input[type=range]::-moz-range-track {
+    background: #ddd;
+	border: none;
+}
+input[type=range]::-moz-range-thumb {
+    border: none;
+    border-radius: 50%;
+    background: var(--main-color);
 }

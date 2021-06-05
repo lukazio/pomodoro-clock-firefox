@@ -108,9 +108,9 @@ const restoreOptions = () => {
 	document.getElementById("customColor").onchange = (evt) => {
 		context.customColor = customColorElt.checked;
 		if (customColorElt.checked)
-			customColorChoicesElt.style.visibility = "visible";
+			customColorChoicesElt.style.display = "block";
 		else
-			customColorChoicesElt.style.visibility = "hidden";
+			customColorChoicesElt.style.display = "none";
 	}
 	context.customColor = (localStorage.customColor === true || localStorage.customColor === "true");
 	customColorElt.checked = context.customColor;
